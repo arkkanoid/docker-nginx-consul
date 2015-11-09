@@ -3,8 +3,8 @@ FROM ubuntu:latest
 ENTRYPOINT ["/bin/start.sh"]
 EXPOSE 80
 ENV CONSUL_URL consul:8500
-RUN apt-get update
-RUN apt-get install nginx
+RUN apt-get update -y
+RUN apt-get install -y nginx
 ADD start.sh /bin/start.sh
 RUN rm -v /etc/nginx/conf.d/*.conf
 
